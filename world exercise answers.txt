@@ -1,0 +1,115 @@
+1.
+select count(id) 
+from city 
+where countrycode = 'usa';
+
+2.
+select population, lifeexpectancy 
+from country 
+where name = 'argentina';
+
+3. 
+select name, lifeexpectancy 
+from country 
+where lifeexpectancy is not null 
+order by lifeexpectancy 
+desc limit 1;
+
+4.
+select co.name as countryname, ci.name as capitalcity 
+from country co left outer join city ci 
+on capital=ci.id 
+where co.code = 'esp';
+
+5.select co.region, cl.language 
+from country co left outer join countrylanguage cl 
+on co.code=cl.countrycode 
+where region = 'southeast asia' 
+group by cl.language;
+
+6.
+select name 
+from city 
+where name like 'f%' 
+limit 25;
+
+7.
+select count(id) 
+from city 
+where countrycode = 'chn';
+
+8. 
+select name, population 
+from country 
+where population is not null 
+order by population 
+limit 5;
+(select name, population from country where population > 0 order by population limit 5;)
+
+9.
+select count(code) 
+from country;
+
+10.
+select name, population 
+from country 
+order by population 
+desc limit 10;
+
+11.
+select name, population 
+from city 
+where countrycode = 'japan' 
+order by population desc 
+limit 5;
+
+12.
+select name, code 
+from country 
+where headofstate = 'elisabeth ii';
+
+13.
+select name 
+from country 
+order by population/surfacearea 
+limit 10;
+
+14.
+select distinct language 
+from countrylanguage;
+
+15.
+select name 
+from country 
+order by gnp desc 
+limit 10;
+
+16.
+select name, surfacearea 
+from country 
+order by surfacearea desc 
+limit 10;
+
+17.
+select countrycode 
+from countrylanguage 
+where language = 'french'  and  percentage > 50.0;
+
+18.
+select name, lifeexpectancy 
+from country 
+where lifeexpectancy is not null 
+order by lifeexpectancy 
+limit 1;
+
+19.
+select governmentform, count(governmentform) as value_occurrence 
+from country 
+group by governmentform 
+order by value_occurrence 
+desc limit 1;
+
+20.
+select count(indepyear) as new_ind_ctrys 
+from country 
+where indepyear is not null;
