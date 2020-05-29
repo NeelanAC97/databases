@@ -1,0 +1,78 @@
+1.
+SELECT * FROM actor;
+
+2.
+sSELECT * FROM actor WHERE first_name = 'john';
+
+3.
+SELECT * FROM actor WHERE last_name = 'neeson';
+
+4.
+
+5.
+SELECT description FROM film WHERE film_id = 100;
+
+6.
+SELECT film_id, title FROM film WHERE rating = 'R';
+
+7.
+SELECT film_id, title FROM film WHERE rating != 'R';
+
+8.
+SELECT * FROM film ORDER BY length LIMIT 10;
+
+9.
+SELECT title FROM film;
+
+10.
+SELECT * FROM film WHERE special_features = 'deleted scenes';
+
+11.
+
+12.
+
+13.
+SELECT a.first_name, a.last_name, COUNT(fa.film_id) AS nooffilms 
+FROM actor a LEFT OUTER JOIN film_actor fa 
+ON a.actor_id=fa.actor_id 
+GROUP BY a.actor_id 
+ORDER BY nooffilms DESC 
+LIMIT 1;
+
+14.
+
+15.
+
+16.
+SELECT AVG(length) FROM film;
+
+17.
+
+18.
+
+19.
+select title, length from film order by length desc;
+
+20.
+SELECT COUNT(film_id) FROM film WHERE release_year = 2010;
+
+21.
+
+22.
+
+23.
+
+24.
+
+25.
+select distinct count(country) from country;
+
+26.
+select first_name, last_name from actor like '%son%' order by first_name;
+
+27.
+
+28.
+
+29.
+
